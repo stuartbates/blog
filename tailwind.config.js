@@ -5,17 +5,14 @@ module.exports = {
     './_posts/*.md',
     './*.html',
   ],
-  corePlugins: {
-    backgroundOpacity: false,
-    textOpacity: false
-  },
   theme: {
     fontFamily: {
       sans: ['Open Sans', 'sans-serif'],
       serif: ['PT Serif', 'serif'],
     },
     colors: {
-      matisse: '#3366BB'
+      black: '#000000',
+      matisse: '#3366BB',
     },
     extend: {},
   },
