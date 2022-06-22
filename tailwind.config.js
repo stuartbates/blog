@@ -8,11 +8,12 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Open Sans', 'sans-serif'],
-      serif: ['PT Serif', 'serif'],
+      serif: ['Source Serif Pro', 'serif'],
     },
     colors: {
       black: '#000000',
       matisse: '#3366BB',
+      white: '#ffffff',
     },
     extend: {},
   },
