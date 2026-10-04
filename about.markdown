@@ -2,7 +2,7 @@
 layout: page
 title: About
 eyebrow: The short, honest version
-intro: I’m a parent, software engineer and compulsive builder based in London.
+intro: I’m a parent, software engineer and compulsive builder based in Bristol.
 permalink: /about/
 ---
 
