@@ -1,15 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{page.title}}</title>
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-</head>
-<body>
-{% include navbar.html %}
-<div class="">
-    {{ content }}
-</div>
-</body>
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f3f0e8">
+    {% seo %}
+    {% feed_meta %}
+    <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {% include navbar.html %}
+
+    <main id="main-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p class="footer-signoff">Made in London, slowly and on purpose.</p>
+        <div class="footer-links" aria-label="Elsewhere">
+          <a href="mailto:{{ site.email }}">Email</a>
+          <a href="https://github.com/{{ site.github_username }}" rel="me">GitHub</a>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </div>
+        <p class="footer-small">&copy; {{ 'now' | date: '%Y' }} Stuart Bates</p>
+      </div>
+    </footer>
+  </body>
 </html>

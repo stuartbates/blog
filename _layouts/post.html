@@ -1,25 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{page.title}}</title>
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-</head>
-<body>
-<a href="/" class="p-4 font-serif font-semibold text-xl text-black text-opacity-70 tracking-wide flex items-center sticky top-0 bg-white">
-    Stuart Bates
-    <span class="text-xs ml-4 font-sans text-black text-opacity-60">Business &bull; Product &bull; Software</span>
-</a>
-<div id="content" class="font-sans mx-auto px-6 md:w-1/2 my-16 text-black text-opacity-80">
-    {% include navbar.html %}
-    {% if page.title%}
-    <h1>{{page.title}}</h1>
-    {% else %}
-    <h1>Untitled post</h1>
-    {% endif %}
-    <div class="text-base text-center text-black text-opacity-50 mt-1">{{ page.date | date: "%d %B %Y" }} &nbsp;&bull;&nbsp; Stu Bates</div>
-    <div class="mt-12 text-xl">{{ content }}</div>
-</div>
-</body>
-</html>
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header shell-narrow">
+    <a class="back-link" href="{{ '/writing/' | relative_url }}"><span aria-hidden="true">←</span> All writing</a>
+    {% if page.categories %}<p class="post-categories">{{ page.categories | join: ' · ' }}</p>{% endif %}
+    <h1>{{ page.title | default: "Untitled post" }}</h1>
+    <div class="post-byline">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+    </div>
+  </header>
+
+  <div class="prose post-body shell-narrow">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer shell-narrow">
+    <div class="authorship">
+      <span class="authorship-mark" aria-hidden="true">SB</span>
+      <p><strong>Written by Stuart, not generated.</strong><br>This site may use AI elsewhere. The essays never do.</p>
+    </div>
+    <div class="post-footer-links">
+      <a href="mailto:{{ site.email }}?subject={{ page.title | uri_escape }}">Reply by email</a>
+      <a href="{{ '/writing/' | relative_url }}">More writing</a>
+    </div>
+  </footer>
+</article>

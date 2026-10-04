@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="shell nav-inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Stuart Bates, home">
+      <span class="wordmark-name">Stuart Bates</span>
+      <span class="wordmark-mark" aria-hidden="true">/</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a{% if page.url == '/about/' %} aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
+      <a{% if page.url == '/writing/' or page.layout == 'post' %} aria-current="page"{% endif %} href="{{ '/writing/' | relative_url }}">Writing</a>
+      <a{% if page.url == '/experiments/' %} aria-current="page"{% endif %} href="{{ '/experiments/' | relative_url }}">Experiments</a>
+    </nav>
+  </div>
+</header>

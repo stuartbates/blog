@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<section class="page shell writing-page">
+  <header class="page-header writing-header">
+    <p class="eyebrow">Notes, essays and unfinished conclusions</p>
+    <h1>Writing to think.</h1>
+    <p class="page-intro">I use writing to make vague ideas precise. There is no publishing schedule and no content strategy—just the occasional subject I need to understand better.</p>
+  </header>
+
+  <aside class="human-note" aria-label="Authorship note">
+    <span class="human-note-mark" aria-hidden="true">✦</span>
+    <p><strong>A small promise:</strong> every essay here is written by me, without generative AI. The rough edges are part of the point.</p>
+  </aside>
+
+  <div class="post-list" aria-label="Published writing">
+    {% for post in site.posts %}
+      <article class="post-list-item">
+        <div class="post-list-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+        <div class="post-list-main">
+          <p class="post-categories">{{ post.categories | join: ' · ' }}</p>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt | strip_html | normalize_whitespace | truncatewords: 38 }}</p>
+        </div>
+        <div class="post-list-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+          <span>{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min</span>
+          <span class="post-list-arrow" aria-hidden="true">↗</span>
+        </div>
+      </article>
+    {% else %}
+      <p>No essays yet.</p>
+    {% endfor %}
+  </div>
+</section>

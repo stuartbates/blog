@@ -1,29 +1,71 @@
 ---
 layout: default
-title: "Stu Bates"
 ---
 
-<div id="content" class="text-center mt-6 md:w-1/2 mx-auto text-black text-opacity-80 px-4">
-    <div class="mb-8">
-        <h1 class="mt-12 text-6xl">Stuart Bates</h1>
-        <p class="text-xl mt-0 text-black text-opacity-60">Business &bull; Product &bull; Software</p>
+<section class="hero shell">
+  <div class="hero-kicker fade-in">London · Software · Products · Business</div>
+  <div class="hero-grid">
+    <h1 class="hero-title fade-in fade-in-delay-1">
+      I build things,<br>
+      <em>then think about why.</em>
+    </h1>
+    <div class="hero-intro fade-in fade-in-delay-2">
+      <p>I’m Stuart—a parent, software engineer and incurable tinkerer interested in how useful things get made.</p>
+      <a class="text-link" href="{{ '/about/' | relative_url }}">A little more about me <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="home-section shell" aria-labelledby="writing-heading">
+  <div class="section-label">
+    <span>01</span>
+    <h2 id="writing-heading">Writing</h2>
+  </div>
+  <div class="section-content writing-feature">
+    <div class="section-copy">
+      <h3>Writing to think.</h3>
+      <p>I write to work out what I think. These essays are written by me, without generative AI, and published only when I have something worth exploring. There is no schedule.</p>
+      <a class="button-link" href="{{ '/writing/' | relative_url }}">All writing <span aria-hidden="true">→</span></a>
     </div>
 
-    <div class="text-2xl leading-relaxed">
-        <p class="mt-12">
-            Previous versions of this blurb were wordy and quite frankly full of crap. This is a much shorter, simpler and honest version.
-        </p>
-        <p class="mt-12">
-            I'm a parent, a software engineer and an avid weightlifter. I've played Ice Hockey most my life but have just quit to take up Brazilian Jiu Jitsu. One day soon I plan to start a boring and very profitable business.
-        </p>
-        <p class="mt-12">
-            I have lots I want to write about but some combination of perfectionism and busyness prevents me. Pretty much the only post I have is this that I wrote last year on <a href="{{ site.posts[0].url | relative_url }}">{{site.posts[0].title}}</a>.
-        </p>
-        <p class="mt-12 mb-0">
-            If you'd like to reach out for any reason, drop me an email to <a href="mailto:hello@stuartbates.com" target="_blank">hello@stuartbates.com</a>.
-        </p>
-        <p class="mt-2 text-base">
-            (Although I'll warn you now, I'm god awful at replying to email, so don't take it personally!)
-        </p>
+    {% assign latest_post = site.posts | first %}
+    {% if latest_post %}
+      <article class="featured-post">
+        <p class="card-label">Latest essay</p>
+        <h3><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h3>
+        <p class="post-excerpt">{{ latest_post.excerpt | strip_html | normalize_whitespace | truncatewords: 32 }}</p>
+        <div class="post-meta">
+          <time datetime="{{ latest_post.date | date_to_xmlschema }}">{{ latest_post.date | date: "%d %B %Y" }}</time>
+          <span aria-hidden="true">·</span>
+          <span>{{ latest_post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+        </div>
+      </article>
+    {% endif %}
+  </div>
+</section>
+
+<section class="home-section shell" aria-labelledby="experiments-heading">
+  <div class="section-label">
+    <span>02</span>
+    <h2 id="experiments-heading">Experiments</h2>
+  </div>
+  <div class="section-content experiment-feature">
+    <div>
+      <h3>Small tools and useful distractions.</h3>
+      <p>A home for little AI tools, prototypes and ideas that are more interesting when they can be used rather than merely described.</p>
     </div>
-</div>
+    <a class="experiment-stamp" href="{{ '/experiments/' | relative_url }}" aria-label="Visit experiments">
+      <span class="stamp-status">Space reserved</span>
+      <span class="stamp-arrow" aria-hidden="true">↗</span>
+      <span class="stamp-caption">The first experiment will appear here.</span>
+    </a>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="shell contact-inner">
+    <p>Have something interesting to discuss?</p>
+    <a href="mailto:{{ site.email }}">{{ site.email }} <span aria-hidden="true">↗</span></a>
+    <small>I’m notoriously slow at email. It isn’t personal.</small>
+  </div>
+</section>
