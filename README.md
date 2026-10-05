@@ -1,6 +1,6 @@
 # stuartbates.com
 
-Personal site, occasional writing and a home for small experiments.
+Personal site and occasional writing.
 
 The site is built with Jekyll and published on GitHub Pages. Blog posts live in
 `_posts`; only posts with `published: true` are included in the generated site.

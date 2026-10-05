@@ -177,8 +177,7 @@ button:focus-visible {
 .hero-kicker,
 .eyebrow,
 .card-label,
-.post-categories,
-.empty-state-label {
+.post-categories {
   margin: 0 0 30px;
   color: var(--accent);
   font-size: 0.7rem;
@@ -284,8 +283,7 @@ button:focus-visible {
   gap: clamp(48px, 8vw, 120px);
 }
 
-.section-copy h3,
-.experiment-feature h3 {
+.section-copy h3 {
   max-width: 600px;
   margin: 0 0 24px;
   font-family: var(--font-display);
@@ -295,8 +293,7 @@ button:focus-visible {
   line-height: 1;
 }
 
-.section-copy > p,
-.experiment-feature > div > p {
+.section-copy > p {
   max-width: 590px;
   margin: 0 0 32px;
   color: var(--muted);
@@ -371,52 +368,6 @@ button:focus-visible {
 
 .featured-post .post-meta {
   color: rgba(255, 253, 247, 0.55);
-}
-
-.experiment-feature {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.56fr);
-  align-items: start;
-  gap: clamp(48px, 8vw, 120px);
-}
-
-.experiment-stamp {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  min-height: 225px;
-  padding: 28px;
-  border: 1px solid var(--line-strong);
-  color: var(--ink);
-  text-decoration: none;
-  transform: rotate(1.5deg);
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
-}
-
-.experiment-stamp:hover {
-  background: var(--green);
-  color: var(--white);
-  transform: rotate(0deg);
-}
-
-.stamp-status {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.stamp-arrow {
-  color: var(--accent);
-  font-size: 1.3rem;
-}
-
-.stamp-caption {
-  grid-column: 1 / -1;
-  align-self: end;
-  max-width: 260px;
-  font-family: var(--font-display);
-  font-size: 1.55rem;
-  line-height: 1.2;
 }
 
 .contact-strip {
@@ -816,38 +767,7 @@ button:focus-visible {
   border-top: 2px solid var(--accent);
 }
 
-/* Experiments and 404 */
-
-.empty-state {
-  margin-bottom: 64px;
-  padding: clamp(30px, 5vw, 56px);
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--white);
-}
-
-.empty-state-label {
-  color: #d77460;
-}
-
-.empty-state h2 {
-  margin: 0 0 20px;
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4.4rem);
-  font-weight: 500;
-  letter-spacing: -0.045em;
-}
-
-.empty-state p:last-child {
-  max-width: 610px;
-  margin-bottom: 0;
-  color: rgba(255, 253, 247, 0.7);
-}
-
-.empty-state code {
-  background: rgba(255, 253, 247, 0.1);
-}
+/* 404 */
 
 .not-found {
   min-height: 68vh;
@@ -951,7 +871,6 @@ button:focus-visible {
 
   .hero-grid,
   .writing-feature,
-  .experiment-feature,
   .page-header,
   .writing-header {
     grid-template-columns: 1fr;
@@ -1032,10 +951,6 @@ button:focus-visible {
 
   .featured-post {
     padding: 30px 24px;
-  }
-
-  .experiment-stamp {
-    min-height: 190px;
   }
 
   .contact-inner {

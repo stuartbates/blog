@@ -8,7 +8,6 @@
     <nav class="site-nav" aria-label="Primary navigation">
       <a{% if page.url == '/about/' %} aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
       <a{% if page.url == '/writing/' or page.layout == 'post' %} aria-current="page"{% endif %} href="{{ '/writing/' | relative_url }}">Writing</a>
-      <a{% if page.url == '/experiments/' %} aria-current="page"{% endif %} href="{{ '/experiments/' | relative_url }}">Experiments</a>
     </nav>
   </div>
 </header>
