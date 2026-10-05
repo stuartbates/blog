@@ -12,4 +12,4 @@ I’m a parent, a software engineer and an avid weightlifter. I played ice hocke
 
 I’m interested in software, product design, marketplaces and the mechanics of building useful businesses. I occasionally [write about those things]({{ '/writing/' | relative_url }}), mostly because writing forces me to make half-formed ideas clearer.
 
-If you’d like to reach out for any reason, email [{{ site.email }}](mailto:{{ site.email }}). I’m awful at replying promptly, so please don’t take a slow response personally.
+If you’d like to reach out, email [{{ site.email }}](mailto:{{ site.email }}).

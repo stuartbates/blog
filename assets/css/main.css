@@ -398,11 +398,6 @@ button:focus-visible {
   text-decoration: none;
 }
 
-.contact-inner small {
-  grid-column: 2;
-  color: rgba(255, 253, 247, 0.72);
-}
-
 /* Pages */
 
 .page {
@@ -955,10 +950,6 @@ button:focus-visible {
 
   .contact-inner {
     grid-template-columns: 1fr;
-  }
-
-  .contact-inner small {
-    grid-column: 1;
   }
 
   .page-header {
